@@ -1,33 +1,47 @@
-﻿# The script of the game goes in this file.
+define quest = Character("Quest", color="#ff6500")
+define qc = Character("Quest Complete", color="ff6500", what_prefix="{s}", what_suffix="{/s}")
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
+default pirate = "Pete"
 
-define e = Character("Eileen")
-
-
-# The game starts here.
+screen boat_ctc():
+    modal True
+    imagebutton:
+        auto "boat %s"
+        focus_mask True
+        action Jump("boatfound")
 
 label start:
+    show bg water
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    show dock:
+        zoom .9
+        ypos .2
+        xpos .2
 
-    scene bg room
+    show pete happy bald:
+        yalign 2
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    "This is [pirate]."
 
-    show eileen happy
+    show pete happy hat
 
-    # These display lines of dialogue.
+    $ pirate = "Captain " + pirate
 
-    e "You've created a new Ren'Py game."
+    "[pirate]."
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    "[pirate] is a pirate."
 
-    # This ends the game.
+    show pete sad hat
 
+    "[pirate] has no ship."
+
+    hide pete
+
+    show screen boat_ctc()
+
+    quest "Find a ship for [pirate]."
+
+label boatfound:
+    hide screen boat_ctc
+    qc "Find a ship for [pirate]."
     return

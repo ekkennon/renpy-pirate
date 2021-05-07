@@ -30,6 +30,12 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+This is a simple game about a pirate captain.
+
+Dock Image Source: https://openclipart.org/detail/11440/rpg-map-symbols-docks
+Boat Image Source: https://openclipart.org/detail/176256/pirate-boat-with-pirate-flag
+Background Image Source: https://openclipart.org/detail/225069/Water
+
 """)
 
 
@@ -37,7 +43,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "Pirate"
+define build.name = "pirate"
 
 
 ## Sounds and music ############################################################
@@ -142,7 +148,7 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "Pirate-1620142040"
+define config.save_directory = "pirate-1620169672"
 
 
 ## Icon ########################################################################
